@@ -1,7 +1,5 @@
 #version 430
 
-// Game of life transfert shader
-
 #define AS_WIDTH 400
 #define AS_HEIGHT 300
 
