@@ -149,7 +149,7 @@ int main() {
 
             BeginTextureMode(whiteTex);
                 ClearBackground(Color{145, 74, 35, 255});
-                DrawCircle(AS_WIDTH / 2, AS_HEIGHT / 2, 15, Color{48, 25, 21, 255});
+                DrawCircleLines(AS_WIDTH / 2, AS_HEIGHT / 2, 15, Color{48, 25, 21, 255});
             EndTextureMode();
             rlBindImageTexture(whiteTex.texture.id, 0, whiteTex.texture.format, 0);
             rlEnableShader(asLogicProgram);
