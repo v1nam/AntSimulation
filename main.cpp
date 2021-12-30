@@ -119,7 +119,7 @@ int main() {
             inputBuffer.commands[inputBuffer.count].x = (GetMouseX() - brushSize/2) / ratio;
             inputBuffer.commands[inputBuffer.count].y = (GetMouseY() - brushSize/2) / ratio;
             inputBuffer.commands[inputBuffer.count].w = brushSize;
-            inputBuffer.commands[inputBuffer.count].value = (int)IsMouseButtonDown(MOUSE_BUTTON_LEFT) + 1;
+            inputBuffer.commands[inputBuffer.count].value = (int)IsMouseButtonDown(MOUSE_BUTTON_RIGHT) + 1;
             inputBuffer.count++;
         }
         if (inputBuffer.count > 0)
