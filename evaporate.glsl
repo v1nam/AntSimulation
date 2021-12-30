@@ -23,6 +23,6 @@ void main()
     uint index = gl_GlobalInvocationID.x + gl_GlobalInvocationID.y * AS_WIDTH;
     markers[index].toHomeStrength = max(markers[index].toHomeStrength - sqrt(dt), 0.0);
     markers[index].toFoodStrength = max(markers[index].toFoodStrength - (pow(dt, dt) * 6.0), 0.0);
-    if (distance(vec2(gl_GlobalInvocationID.xy), vec2(AS_WIDTH, AS_HEIGHT) / 2.0) <= 25.0)
+    if (distance(vec2(gl_GlobalInvocationID.xy), vec2(AS_WIDTH, AS_HEIGHT) / 2.0) <= 18.0)
         markers[index].toHomeStrength = 2000.0;
 }
