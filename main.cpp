@@ -148,8 +148,10 @@ int main() {
             rlDisableShader();
 
             BeginTextureMode(whiteTex);
-                ClearBackground(Color{145, 74, 35, 255});
-                DrawCircleLines(AS_WIDTH / 2, AS_HEIGHT / 2, 15, Color{48, 25, 21, 255});
+                // ClearBackground(Color{145, 74, 35, 255});
+                ClearBackground(Color{13, 16, 23, 255});
+                // DrawCircleLines(AS_WIDTH / 2, AS_HEIGHT / 2, 15, Color{48, 25, 21, 255});
+                DrawCircleLines(AS_WIDTH / 2, AS_HEIGHT / 2, 15, Color{17, 21, 28, 255});
             EndTextureMode();
             rlBindImageTexture(whiteTex.texture.id, 0, whiteTex.texture.format, 0);
             rlEnableShader(asLogicProgram);
@@ -169,7 +171,8 @@ int main() {
         SetShaderValueTexture(asRenderShader, GetShaderLocation(asRenderShader, "texture0"), whiteTex.texture);
 
         BeginDrawing();
-            ClearBackground(Color{145, 74, 35, 255});
+            // ClearBackground(Color{145, 74, 35, 255});
+            ClearBackground(Color{13, 16, 23, 255});
             BeginShaderMode(asRenderShader);
                 DrawTexturePro(whiteTex.texture, Rectangle{0, 0, (float)AS_WIDTH, (float)AS_HEIGHT}, Rectangle{0, 0, AS_WIDTH * ratio, AS_HEIGHT * ratio}, Vector2{0, 0}, 0.f, WHITE);
             EndShaderMode();

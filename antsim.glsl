@@ -145,7 +145,7 @@ void main()
             dir = normalize(targetFood - pos);
             if (distance(pos, targetFood) <= 0.5) {
                 ant.hasFood = 1;
-                ant.clock = 2.0;
+                ant.clock = 1.0;
                 dir = -dir;
                 vel = -vel;
                 targetFood = vec2(-1, -1);
@@ -177,14 +177,15 @@ void main()
         float s = markers[ipos.x + (ipos.y * AS_WIDTH)].toFoodStrength;
         markers[ipos.x + (ipos.y * AS_WIDTH)].toFoodStrength = min(max(s + pheromoneStrength, 0.0), 2000.0);
     }
-    imageStore(map, ipos, vec4(0.109, 0.0196, 0.0039, 1.0));
+    imageStore(map, ipos, vec4(0.749, 0.741, 0.7137, 1.0));
     if (foodPos[ipos.x + (ipos.y * AS_WIDTH)] == 2) {
         dir = -dir;
         vel = -vel;
     }
     if (ant.hasFood == 1) {
-        vec2 antHead = pos + normalize(vel);
-        imageStore(map, ivec2(int(antHead.x), int(antHead.y)), vec4(0.0, 1.0, 0.0, 1.0));
+        // vec2 antHead = pos + normalize(vel);
+        // imageStore(map, ivec2(int(antHead.x), int(antHead.y)), vec4(0.0, 1.0, 0.0, 1.0));
+        imageStore(map, ipos, vec4(1.0, 0.709, 0.329, 1.0));
         if (distance((vec2(AS_WIDTH, AS_HEIGHT) / 2.0), pos) <= 16.0) {
             ant.hasFood = 0;
             ant.clock = 0.0;
