@@ -34,10 +34,10 @@ void main()
     float toHome = markers[ind].toHomeStrength;
     float toFood = markers[ind].toFoodStrength;
 
-    vec4 col = texture(texture0, fragTexCoord);
-    if (ivec3(col.rgb * 255.0) == ivec3(145, 74, 35)) {
+    vec4 colSource = texture(texture0, fragTexCoord);
+    if (ivec3(colSource.rgb * 255.0) == ivec3(145, 74, 35)) {
         if (toFood > 0.0 || toHome > 0.0) {
-            float hv = toHome / 2000.0;
+            float hv = toHome / 4000.0;
             float fv = toFood / 2000.0;
             vec3 col = vec3(0.0);
             vec3 col2 = vec3(0.0);
@@ -50,9 +50,9 @@ void main()
             }
             finalColor = mix(vec4(col, max(fv, hv)), vec4(col2, min(fv, hv)), min(fv, hv));
         }
-        else finalColor = col;
+        else finalColor = colSource;
     } else
-        finalColor = col;
+        finalColor = colSource;
     if ((val) == 1) finalColor = vec4(0.0, 1.0, 0.0, 1.0);
     if ((val) == 2) finalColor = vec4(0.321, 0.152, 0.113, 1.0);
 }
